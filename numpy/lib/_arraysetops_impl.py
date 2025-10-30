@@ -400,8 +400,8 @@ def _unique1d(ar, return_index=False, return_inverse=False,
         else:
             mask[1:] = aux[1:] != aux[:-1]
         perm = np.nonzero(mask)
-
-        ret = (aux[perm[0]],) # This is faster than using a bool mask in most cases
+        # This is faster than using a bool mask in most cases
+        ret = (aux[perm[0]],)
         if return_index:
             ret += (perm[0],)
         if return_inverse:
